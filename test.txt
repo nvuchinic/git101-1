@@ -12,6 +12,19 @@ Kopija određenog repositorya.
 Da li je moguće povući stvari sa forkanog repositorya u naš novi repository?
 Da
 (Zadaća: Kako?)
+RJESENJE:
+- Kreiramo novi repozitorij na githubu.
+- Kreiramo lokalnu kopiju forkanog repozitorija na nasem racunaru koristeci komandu clone u terminalu:
+   	git clone https://github.com/YOUR-USERNAME/ImeRepozitorija
+- Zatim koristimo standardne git komande za prebacivanje lokalne kopije u novokreirani repozitorij na githubu:
+	git init
+	git add 
+	git commit
+	git remote add origin ''URL adresa novog repozitorija''
+	git push origin master
+
+
+-
 
 Šta je branch?
 Branch je kopija fajlova u istom repositoryu.
@@ -47,6 +60,10 @@ Koje su moguće greške?
 Korisne komande:
 - git status (UVIJEK KUCAJTE PRIJE COMMItA I SL.)
 - git stash (Zadaća: Objasniti kako git stash funkcioniše)
+RJESENJE:
+Zamislimo da radimo na novom featuru, modifikujuci fajlove u radnom direktoriju, i odjednom se javi potreba da ispravimo bug u nekoj drugoj grani(branch). Ali, ne zelimo commit-ati napola uradjen posao. U toj situaciji rjesenje je git stash.
+Komanda git stash pohranjuje trenutni direktorij u kojem radimo kao i index na sigurno mjesto(odredjeni stack), i vraca stanje tog direktorija na stanje iz zadnjeg commit-a. Ako zelimo da se vratimo na stanje radnog direktorija neposredno prije poziva naredbe git stash, koristimo naredbu git stash pop. 
+Prije nego koristimo git stash komandu, moramo biti sigurni da su fajlovi koji su dodani u radni direkktorij takodjer dodani i u index(u suprotnom komanda git stash nece sacuvati te fajlove).
 
 Zadaća:
 - Kreirati lokalni Java projekat, dodati ga na github (KROZ KONZOLU) git shell
